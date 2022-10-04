@@ -18,7 +18,9 @@ function addItem(e){
   // Get input value
   var newItem = document.getElementById('item').value;
   var newItem2=document.getElementById('description').value;
-  console.log(newItem)
+  let my_obj={name:newItem,email:newItem2};
+  let my_obj_serial=JSON.stringify(my_obj)
+
   // Create new li element
   var li = document.createElement('li');
   // Add class
@@ -26,8 +28,8 @@ function addItem(e){
   // Add text node with input value
   li.appendChild(document.createTextNode(newItem));
   li.appendChild(document.createTextNode(newItem2));
-  localStorage.setItem(newItem,newItem2)
-  console.log(localStorage.getItem(newItem))
+  localStorage.setItem('my_obj',my_obj_serial)
+  console.log(localStorage.getItem('my_obj'))
   // Create del button element
   var deleteBtn = document.createElement('button');
 
