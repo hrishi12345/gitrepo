@@ -16,10 +16,10 @@ function addItem(e){
   e.preventDefault();
 
   // Get input value
-  var newItem = document.getElementById('item').value;
-  var newItem2=document.getElementById('description').value;
-  let my_obj={name:newItem,email:newItem2};
-  let my_obj_serial=JSON.stringify(my_obj)
+  const newItem = e.target.item.value;
+  const newItem2=e.target.description.value;
+  const my_obj={newItem,newItem2};
+  let my_obj_serial=JSON.stringify(my_obj.email,JSON.stringify(obj))
 
   // Create new li element
   var li = document.createElement('li');
